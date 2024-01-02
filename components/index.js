@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 
 module.exports.multerUpload = multer({ storage: storage })
 
-module.exports.downloadFile = (ath, url) => {
+module.exports.downloadFile = (Path, url) => {
     let fileData = http.get(url, function (res) {
         const fileStream = fs.createWriteStream(Path)
         res.pipe(fileStream);

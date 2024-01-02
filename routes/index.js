@@ -209,7 +209,7 @@ router.post("/save_image", auth, async (req, res) => {
     }
 })
 
-router.get("/getPhotos", async (req, res) => {
+router.get("/getPhotos", auth, async (req, res) => {
 
     const { page, itemsPerPage } = req.query;
     const pageSize = itemsPerPage;
